@@ -15,7 +15,14 @@ namespace Ucu.Poo.Defense
             }
             set
             {
-                this.amount = value;
+                if (value < 0)
+                {
+                    this.amount = value;
+                }
+                else
+                {
+                    throw new ArgumentException("El valor del código debe ser negativo");
+                }
             }
         }
 
